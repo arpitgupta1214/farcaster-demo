@@ -1,8 +1,8 @@
-import type { AppProps } from 'next/app'
+'use client'
 import '@/styles/globals.css'
 import { PrivyProvider } from '@privy-io/react-auth'
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<PrivyProvider
 			appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID || ''}
@@ -13,7 +13,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 				},
 			}}
 		>
-			<Component {...pageProps} />
+			{children}
 		</PrivyProvider>
 	)
 }

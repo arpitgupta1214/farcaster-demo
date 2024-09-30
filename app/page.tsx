@@ -1,7 +1,8 @@
+'use client'
 import Blobby from '@/components/svg/blobby'
 import { useLogin, usePrivy } from '@privy-io/react-auth'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 const Index = () => {
 	const router = useRouter()
@@ -31,7 +32,7 @@ const Index = () => {
 					<h2 className='my-4 text-xl font-semibold text-gray-800'>
 						Privy Farcaster Demo
 					</h2>
-					<h2 className='my-4 text-md text-gray-800'>
+					<h2 className='text-md my-4 text-gray-800'>
 						You can login with and write to Farcaster using Privy.
 					</h2>
 					<div className='mt-2 w-1/2'>
@@ -50,3 +51,4 @@ const Index = () => {
 }
 
 export default Index
+export const dynamic = 'force-dynamic'
